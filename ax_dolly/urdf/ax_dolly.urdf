@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="ax_dolly">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.00270434158045469 0 0.0237753006001797"
+        rpy="0 0 0" />
+      <mass
+        value="0.815245051508145" />
+      <inertia
+        ixx="0.000747996350479678"
+        ixy="5.61324695698701E-06"
+        ixz="4.6065911377744E-05"
+        iyy="0.00253979851645423"
+        iyz="-1.28573126453128E-20"
+        izz="0.0028879451739071" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ax_dolly/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ax_dolly/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="wheelright_link">
+    <inertial>
+      <origin
+        xyz="-0.0075 0 -1.7347E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.028274" />
+      <inertia
+        ixx="9.1892E-06"
+        ixy="1.1099E-38"
+        ixz="1.096E-38"
+        iyy="5.1247E-06"
+        iyz="-1.1248E-40"
+        izz="5.1247E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ax_dolly/meshes/wheelright_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ax_dolly/meshes/wheelright_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheelright_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.07 0.005"
+      rpy="1.5708 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheelright_link" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="wheelleft_link">
+    <inertial>
+      <origin
+        xyz="0.0075 0 -1.7347E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.028274" />
+      <inertia
+        ixx="9.1892E-06"
+        ixy="1.1099E-38"
+        ixz="2.4757E-37"
+        iyy="5.1247E-06"
+        iyz="-1.1248E-40"
+        izz="5.1247E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ax_dolly/meshes/wheelleft_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ax_dolly/meshes/wheelleft_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheelleft_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.07 0.005"
+      rpy="1.5708 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheelleft_link" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="frontlidar_link">
+    <inertial>
+      <origin
+        xyz="-6.9389E-18 0.003 -1.3878E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.00023091" />
+      <inertia
+        ixx="1.3999E-09"
+        ixy="1.4221E-25"
+        ixz="-1.635E-25"
+        iyy="1.4143E-09"
+        iyz="-3.2036E-26"
+        izz="1.3999E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ax_dolly/meshes/frontlidar_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ax_dolly/meshes/frontlidar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="frontlidar_joint"
+    type="fixed">
+    <origin
+      xyz="0.094 -0.044 0.016"
+      rpy="1.5708 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="frontlidar_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="backlidar_link">
+    <inertial>
+      <origin
+        xyz="1.3878E-17 6.9389E-18 0.003"
+        rpy="0 0 0" />
+      <mass
+        value="0.00023091" />
+      <inertia
+        ixx="1.3999E-09"
+        ixy="0"
+        ixz="5.3629E-42"
+        iyy="1.3999E-09"
+        iyz="4.6853E-42"
+        izz="1.4143E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ax_dolly/meshes/backlidar_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ax_dolly/meshes/backlidar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="backlidar_joint"
+    type="fixed">
+    <origin
+      xyz="-0.094 0.044 0.016"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="backlidar_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="imu_link">
+    <inertial>
+      <origin
+        xyz="0 -3.4694E-18 0.0075"
+        rpy="0 0 0" />
+      <mass
+        value="0.0015" />
+      <inertia
+        ixx="4.0625E-08"
+        ixy="-5.0628E-25"
+        ixz="4.8789E-25"
+        iyy="4.0625E-08"
+        iyz="-8.488E-25"
+        izz="2.5E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ax_dolly/meshes/imu_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ax_dolly/meshes/imu_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="imu_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.052"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="imu_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <gazebo>
+  <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+
+    <!-- Plugin update rate in Hz -->
+    <updateRate>10</updateRate>
+
+    <!-- Name of left joint, defaults to `left_joint` -->
+    <leftJoint>wheelleft_joint</leftJoint>
+
+    <!-- Name of right joint, defaults to `right_joint` -->
+    <rightJoint>wheelright_joint</rightJoint>
+
+    <!-- The distance from the center of one wheel to the other, in meters, defaults to 0.34 m -->
+    <wheelSeparation>0.5380</wheelSeparation>
+
+    <!-- Diameter of the wheels, in meters, defaults to 0.15 m -->
+    <wheelDiameter>0.600</wheelDiameter>
+
+    <!-- Wheel acceleration, in rad/s^2, defaults to 0.0 rad/s^2 -->
+    <wheelAcceleration>1.0</wheelAcceleration>
+
+    <!-- Maximum torque which the wheels can produce, in Nm, defaults to 5 Nm -->
+    <wheelTorque>20</wheelTorque>
+
+    <!-- Topic to receive geometry_msgs/Twist message commands, defaults to `cmd_vel` -->
+    <commandTopic>cmd_vel</commandTopic>
+
+    <!-- Topic to publish nav_msgs/Odometry messages, defaults to `odom` -->
+    <odometryTopic>odom</odometryTopic>
+
+    <!-- Odometry frame, defaults to `odom` -->
+    <odometryFrame>odom</odometryFrame>
+
+    <!-- Robot frame to calculate odometry from, defaults to `base_footprint` -->
+    <robotBaseFrame>base_link</robotBaseFrame>
+
+    <!-- Odometry source, 0 for ENCODER, 1 for WORLD, defaults to WORLD -->
+    <odometrySource>1</odometrySource>
+
+    <!-- Set to true to publish transforms for the wheel links, defaults to false -->
+    <publishWheelTF>true</publishWheelTF>
+
+    <!-- Set to true to publish transforms for the odometry, defaults to true -->
+    <publishOdom>true</publishOdom>
+
+    <!-- Set to true to publish sensor_msgs/JointState on /joint_states for the wheel joints, defaults to false -->
+    <publishWheelJointState>true</publishWheelJointState>
+
+    <!-- Set to true to swap right and left wheels, defaults to true -->
+    <legacyMode>false</legacyMode>
+  </plugin>
+</gazebo>
+<gazebo reference="frontlidar_link">
+    <sensor type="ray" name="head_hokuyo_sensor">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>40</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>720</samples>
+            <resolution>1</resolution>
+            <min_angle>-1.570796</min_angle>
+            <max_angle>1.570796</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>30.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise parameters based on published spec for Hokuyo laser
+               achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
+               stddev of 0.01m will put 99.7% of samples within 0.03m of the true
+               reading. -->
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
+        <topicName>/scan0</topicName>
+        <frameName>frontlidar_link</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <gazebo reference="backlidar_link">
+    <sensor type="ray" name="head_hokuyo_sensor">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>40</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>720</samples>
+            <resolution>1</resolution>
+            <min_angle>-1.570796</min_angle>
+            <max_angle>1.570796</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>30.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise parameters based on published spec for Hokuyo laser
+               achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
+               stddev of 0.01m will put 99.7% of samples within 0.03m of the true
+               reading. -->
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
+        <topicName>/scan1</topicName>
+        <frameName>backlidar_link</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+</robot>
